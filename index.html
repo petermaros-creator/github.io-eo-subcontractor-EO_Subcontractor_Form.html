@@ -17,20 +17,43 @@
     --green: #27ae60;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Calibri, 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: var(--slate); min-height: 100vh; }
-  .site-header { background: var(--navy); border-bottom: 4px solid var(--gold); padding: 20px 40px; display: flex; align-items: center; gap: 20px; }
+
+  body {
+    font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: var(--slate);
+    min-height: 100vh;
+  }
+
+  .site-header {
+    background: var(--navy);
+    border-bottom: 4px solid var(--gold);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   .site-header .wordmark { font-size: 26px; font-weight: 700; color: var(--white); letter-spacing: 2px; }
   .site-header .tagline  { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-top: 2px; }
-  .hero { background: linear-gradient(135deg, #1a3d5c 0%, var(--navy) 60%, #2a5a8a 100%); padding: 48px 40px 40px; text-align: center; border-bottom: 3px solid var(--gold); }
+
+  .hero {
+    background: linear-gradient(135deg, #1a3d5c 0%, var(--navy) 60%, #2a5a8a 100%);
+    padding: 48px 40px 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
   .hero h1 { color: var(--white); font-size: 32px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
   .hero p  { color: #a8bfcf; font-size: 16px; max-width: 600px; margin: 0 auto 28px; }
   .kpi-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .kpi { background: rgba(255,255,255,0.08); border: 1px solid rgba(217,164,65,0.4); border-radius: 6px; padding: 12px 24px; min-width: 130px; }
   .kpi .val { font-size: 22px; font-weight: 700; color: var(--gold); }
   .kpi .lbl { font-size: 11px; color: #a8bfcf; margin-top: 2px; letter-spacing: 0.5px; }
+
   .container { max-width: 880px; margin: 36px auto; padding: 0 20px 60px; }
+
   .notice { background: var(--cream); border-left: 5px solid var(--gold); border-radius: 4px; padding: 16px 20px; margin-bottom: 32px; font-size: 14px; color: var(--slate); line-height: 1.6; }
   .notice strong { color: var(--navy); }
+
   .section { background: var(--white); border-radius: 8px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(31,74,110,0.08); overflow: hidden; }
   .section-header { background: var(--navy); border-top: 3px solid var(--gold); padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
   .section-num { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 13px; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -56,7 +79,7 @@
   .ins-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
   .ins-table th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 700; font-size: 12px; letter-spacing: 0.3px; }
   .ins-table th:first-child { border-top-left-radius: 5px; }
-  .ins-table th:last-child { border-top-right-radius: 5px; }
+  .ins-table th:last-child  { border-top-right-radius: 5px; }
   .ins-table td { padding: 9px 14px; border-bottom: 1px solid var(--gray); vertical-align: middle; }
   .ins-table tr:nth-child(even) td { background: var(--cream); }
   .ins-table .min-val { font-weight: 700; color: var(--navy); }
@@ -105,31 +128,31 @@
   </div>
 </div>
 <div class="container">
-  <div class="notice"><strong>How to Apply:</strong> Complete all sections, upload your required documents in Section 9, then click Submit. Files are sent directly to our procurement team. Questions? Email <strong>procurement@solaroptimum.com</strong> or <strong>ricardosalinas@solaroptimum.com</strong>.</div>
+  <div class="notice"><strong>How to Apply:</strong> Complete all sections, upload required documents in Section 9, then click Submit. Files are sent directly to our procurement team and a dedicated vendor folder is created automatically. Questions? Email <strong>procurement@solaroptimum.com</strong> or <strong>ricardosalinas@solaroptimum.com</strong>.</div>
   <form id="qual-form" novalidate>
     <div class="section"><div class="section-header"><div class="section-num">1</div><div class="section-title">COMPANY INFORMATION</div></div><div class="section-body"><div class="field-grid">
-      <div class="field"><label>Legal Business Name <span class="req">*</span></label><input type="text" id="company_legal" name="company_legal" required placeholder="Full legal entity name"></div>
-      <div class="field"><label>DBA / Trade Name</label><input type="text" id="company_dba" name="company_dba" placeholder="If operating under a different name"></div>
-      <div class="field"><label>Primary Contact &mdash; Name &amp; Title <span class="req">*</span></label><input type="text" id="contact_name" name="contact_name" required placeholder="e.g. Jane Smith, VP Operations"></div>
-      <div class="field"><label>Primary Contact Email <span class="req">*</span></label><input type="email" id="contact_email" name="contact_email" required placeholder="jane@yourcompany.com"></div>
-      <div class="field"><label>Primary Contact Phone <span class="req">*</span></label><input type="tel" id="contact_phone" name="contact_phone" required placeholder="(xxx) xxx-xxxx"></div>
-      <div class="field"><label>Years in Business <span class="req">*</span></label><input type="number" id="years_biz" name="years_biz" required min="0" max="200" placeholder="e.g. 12"></div>
-      <div class="field field-full"><label>Corporate Structure <span class="req">*</span></label><select id="corp_structure" name="corp_structure" required><option value="">&mdash; Select &mdash;</option><option>LLC</option><option>Corporation (C-Corp)</option><option>S-Corporation</option><option>Partnership</option><option>Sole Proprietorship</option><option>Other</option></select></div>
-      <div class="field field-full"><label>Primary Business Address <span class="req">*</span></label><input type="text" id="address" name="address" required placeholder="Street, City, State, ZIP"></div>
-      <div class="field"><label>Company Website <span class="req">*</span></label><input type="text" id="website" name="website" required placeholder="https://yourcompany.com"></div>
-      <div class="field"><label>Federal Tax ID (EIN) <span class="req">*</span></label><input type="text" id="ein" name="ein" required placeholder="XX-XXXXXXX"></div>
+      <div class="field"><label>Legal Business Name <span class="req">*</span></label><input type="text" id="company_legal" required placeholder="Full legal entity name"></div>
+      <div class="field"><label>DBA / Trade Name</label><input type="text" id="company_dba" placeholder="If operating under a different name"></div>
+      <div class="field"><label>Primary Contact &mdash; Name &amp; Title <span class="req">*</span></label><input type="text" id="contact_name" required placeholder="e.g. Jane Smith, VP Operations"></div>
+      <div class="field"><label>Primary Contact Email <span class="req">*</span></label><input type="email" id="contact_email" required placeholder="jane@yourcompany.com"></div>
+      <div class="field"><label>Primary Contact Phone <span class="req">*</span></label><input type="tel" id="contact_phone" required placeholder="(xxx) xxx-xxxx"></div>
+      <div class="field"><label>Years in Business <span class="req">*</span></label><input type="number" id="years_biz" required min="0" max="200" placeholder="e.g. 12"></div>
+      <div class="field field-full"><label>Corporate Structure <span class="req">*</span></label><select id="corp_structure" required><option value="">&mdash; Select &mdash;</option><option>LLC</option><option>Corporation (C-Corp)</option><option>S-Corporation</option><option>Partnership</option><option>Sole Proprietorship</option><option>Other</option></select></div>
+      <div class="field field-full"><label>Primary Business Address <span class="req">*</span></label><input type="text" id="address" required placeholder="Street, City, State, ZIP"></div>
+      <div class="field"><label>Company Website <span class="req">*</span></label><input type="text" id="website" required placeholder="https://yourcompany.com"></div>
+      <div class="field"><label>Federal Tax ID (EIN) <span class="req">*</span></label><input type="text" id="ein" required placeholder="XX-XXXXXXX"></div>
     </div></div></div>
     <div class="section"><div class="section-header"><div class="section-num">2</div><div class="section-title">FINANCIAL STABILITY &amp; COMPLIANCE</div></div><div class="section-body"><div class="field-grid single">
-      <div class="field"><label>D&amp;B Number / Business Credit Rating</label><input type="text" id="dnb" name="dnb" placeholder="DUNS number or equivalent"></div>
-      <div class="field"><label>Active Litigation / Arbitration / Mediation Disclosure <span class="req">*</span></label><div class="hint">State "None" if not applicable.</div><textarea id="litigation" name="litigation" required placeholder='e.g. "None" or describe active matters'></textarea></div>
+      <div class="field"><label>D&amp;B Number / Business Credit Rating</label><input type="text" id="dnb" placeholder="DUNS number or equivalent"></div>
+      <div class="field"><label>Active Litigation Disclosure <span class="req">*</span></label><div class="hint">State "None" if not applicable.</div><textarea id="litigation" required placeholder='e.g. "None" or describe active matters'></textarea></div>
     </div></div></div>
     <div class="section"><div class="section-header"><div class="section-num">3</div><div class="section-title">LICENSING &amp; CERTIFICATIONS</div></div><div class="section-body"><div class="field-grid">
-      <div class="field"><label>State Contractor License Number(s) <span class="req">*</span></label><div class="hint">Include all numbers and classifications (e.g. C-10 Electrical, B General Building)</div><input type="text" id="license_num" name="license_num" required placeholder="e.g. CA C-10 #123456, CA B #789012"></div>
-      <div class="field"><label>States Licensed to Operate In <span class="req">*</span></label><input type="text" id="states_licensed" name="states_licensed" required placeholder="e.g. CA, NV, AZ"></div>
-      <div class="field"><label>OSHA Certifications</label><div class="hint">OSHA 10, OSHA 30 &mdash; list name and level for each certified employee</div><input type="text" id="osha_certs" name="osha_certs" placeholder="e.g. OSHA 30 - J. Smith; OSHA 10 - R. Jones"></div>
-      <div class="field"><label>Journeyman Electrician On-Site for Live-Load Work?</label><select id="journeyman" name="journeyman"><option value="">&mdash; Select &mdash;</option><option>Yes</option><option>No</option></select></div>
-      <div class="field field-full"><label>Other Certifications</label><div class="hint">Manufacturer-specific, UL, NABCEP, etc.</div><input type="text" id="other_certs" name="other_certs" placeholder="e.g. NABCEP PV Installation Professional - J. Smith (exp. 12/2025)"></div>
-    </div><div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="nabcep_cert" name="nabcep_cert"><span class="check-label">NABCEP Certified &mdash; copies uploaded in Section 9 below</span></label></div></div></div>    <div class="section"><div class="section-header"><div class="section-num">4</div><div class="section-title">INSURANCE REQUIREMENTS</div></div><div class="section-body">
+      <div class="field"><label>State Contractor License Number(s) <span class="req">*</span></label><div class="hint">Include all numbers and classifications (e.g. C-10 Electrical, B General Building)</div><input type="text" id="license_num" required placeholder="e.g. CA C-10 #123456, CA B #789012"></div>
+      <div class="field"><label>States Licensed to Operate In <span class="req">*</span></label><input type="text" id="states_licensed" required placeholder="e.g. CA, NV, AZ"></div>
+      <div class="field"><label>OSHA Certifications</label><div class="hint">OSHA 10, OSHA 30 &mdash; list name and level for each certified employee</div><input type="text" id="osha_certs" placeholder="e.g. OSHA 30 - J. Smith; OSHA 10 - R. Jones"></div>
+      <div class="field"><label>Journeyman Electrician On-Site for Live-Load Work?</label><select id="journeyman"><option value="">&mdash; Select &mdash;</option><option>Yes</option><option>No</option></select></div>
+      <div class="field field-full"><label>Other Certifications</label><div class="hint">Manufacturer-specific, UL, NABCEP, etc.</div><input type="text" id="other_certs" placeholder="e.g. NABCEP PV Installation Professional - J. Smith (exp. 12/2025)"></div>
+    </div><div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="nabcep_cert"><span class="check-label">NABCEP Certified &mdash; copies uploaded in Section 9 below</span></label></div></div></div>    <div class="section"><div class="section-header"><div class="section-num">4</div><div class="section-title">INSURANCE REQUIREMENTS</div></div><div class="section-body">
       <table class="ins-table"><thead><tr><th>Coverage Type</th><th>Minimum Required</th><th>Notes</th></tr></thead><tbody>
         <tr><td><strong>General Liability</strong></td><td class="min-val">$2,000,000 per occurrence</td><td>Energy Optimum listed as Additional Insured</td></tr>
         <tr><td><strong>Workers' Compensation</strong></td><td class="min-val">Statutory limits</td><td>Required for all field personnel</td></tr>
@@ -137,19 +160,19 @@
         <tr><td><strong>Umbrella / Excess</strong></td><td class="min-val">$5,000,000 per occurrence</td><td>Following form over GL, WC &amp; Auto</td></tr>
       </tbody></table>
       <div class="field-grid">
-        <div class="field"><label>General Liability Coverage Limit ($) <span class="req">*</span></label><div class="hint">Min. required: $2,000,000.</div><input type="number" id="gl_limit" name="gl_limit" required min="0" placeholder="e.g. 2000000"></div>
-        <div class="field"><label>COI Expiration Date <span class="req">*</span></label><div class="hint">Must not expire within 30 days of submission.</div><input type="date" id="coi_expiry" name="coi_expiry" required></div>
+        <div class="field"><label>GL Coverage Limit ($) <span class="req">*</span></label><div class="hint">Min. required: $2,000,000.</div><input type="number" id="gl_limit" required min="0" placeholder="e.g. 2000000"></div>
+        <div class="field"><label>COI Expiration Date <span class="req">*</span></label><div class="hint">Must not expire within 30 days of submission.</div><input type="date" id="coi_expiry" required></div>
       </div>
-      <div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="wc_confirm" name="wc_confirm"><span class="check-label">Workers' Compensation &mdash; active coverage confirmed for all field personnel<span class="req-badge">REQUIRED</span></span></label></div>
+      <div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="wc_confirm"><span class="check-label">Workers' Compensation &mdash; active coverage confirmed for all field personnel<span class="req-badge">REQUIRED</span></span></label></div>
     </div></div>
     <div class="section"><div class="section-header"><div class="section-num">5</div><div class="section-title">SAFETY PROGRAM &amp; RECORD</div></div><div class="section-body">
       <div class="field-grid">
-        <div class="field"><label>EMR (Experience Modification Rate) <span class="req">*</span></label><div class="hint">3-year average. Values above 1.2 require written explanation.</div><input type="number" id="emr_rate" name="emr_rate" required step="0.01" min="0" placeholder="e.g. 0.85"></div>
-        <div class="field"><label>Total Recordable Incident Rate (TRIR)</label><div class="hint">Most recent year.</div><input type="number" id="trir" name="trir" step="0.01" min="0" placeholder="e.g. 1.2"></div>
+        <div class="field"><label>EMR (Experience Modification Rate) <span class="req">*</span></label><div class="hint">3-year average. Values above 1.2 require written explanation.</div><input type="number" id="emr_rate" required step="0.01" min="0" placeholder="e.g. 0.85"></div>
+        <div class="field"><label>Total Recordable Incident Rate (TRIR)</label><div class="hint">Most recent year.</div><input type="number" id="trir" step="0.01" min="0" placeholder="e.g. 1.2"></div>
       </div>
       <div class="check-list" style="margin-top:16px">
-        <label class="check-item"><input type="checkbox" id="loto_prog" name="loto_prog"><span class="check-label">LOTO (Lockout/Tagout) program in place for all field personnel<span class="req-badge">REQUIRED</span></span></label>
-        <label class="check-item"><input type="checkbox" id="arc_flash" name="arc_flash"><span class="check-label">Arc Flash program and PPE requirements documented and enforced<span class="req-badge">REQUIRED</span></span></label>
+        <label class="check-item"><input type="checkbox" id="loto_prog"><span class="check-label">LOTO (Lockout/Tagout) program in place for all field personnel<span class="req-badge">REQUIRED</span></span></label>
+        <label class="check-item"><input type="checkbox" id="arc_flash"><span class="check-label">Arc Flash program and PPE requirements documented and enforced<span class="req-badge">REQUIRED</span></span></label>
       </div>
     </div></div>
     <div class="section"><div class="section-header"><div class="section-num">6</div><div class="section-title">PROJECT EXPERIENCE &amp; TECHNICAL CAPABILITY</div></div><div class="section-body">
@@ -157,66 +180,264 @@
       <div id="projects-container"></div>
       <button type="button" id="add-project-btn" style="margin-top:12px;background:none;border:1.5px dashed var(--gold);border-radius:5px;padding:8px 18px;color:var(--gold);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">+ Add Another Project</button>
       <div class="field-grid" style="margin-top:20px">
-        <div class="field"><label>Project Management Tools Used</label><input type="text" id="pm_tools" name="pm_tools" placeholder="Procore, Raken, Fieldwire, etc."></div>
-        <div class="field"><label>Commissioning &amp; QA Process</label><input type="text" id="qa_process" name="qa_process" placeholder="Briefly describe your standard process"></div>
+        <div class="field"><label>Project Management Tools Used</label><input type="text" id="pm_tools" placeholder="Procore, Raken, Fieldwire, etc."></div>
+        <div class="field"><label>Commissioning &amp; QA Process</label><input type="text" id="qa_process" placeholder="Briefly describe your standard process"></div>
       </div>
     </div></div>
     <div class="section"><div class="section-header"><div class="section-num">7</div><div class="section-title">OPERATIONAL CAPACITY</div></div><div class="section-body"><div class="field-grid">
-      <div class="field"><label>Typical Crew Size for EPC Deployment</label><input type="text" id="crew_size" name="crew_size" placeholder="e.g. 8-12 field crew + 2 supers"></div>
-      <div class="field"><label>Max System Size &mdash; Single Mobilization (kW DC)</label><input type="number" id="max_size" name="max_size" min="0" placeholder="e.g. 2000"></div>
-      <div class="field"><label>Lead Time: Award to Mobilization (days)</label><input type="number" id="lead_time" name="lead_time" min="0" placeholder="e.g. 14"></div>
-      <div class="field"><label>Geographic Coverage Area</label><input type="text" id="geo_area" name="geo_area" placeholder="e.g. Southern California, Nevada"></div>
-      <div class="field field-full"><label>Equipment: Owned vs. Rented</label><textarea id="equipment" name="equipment" placeholder="List major equipment and whether owned or rented..."></textarea></div>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subcontractor Qualification Application — Energy Optimum</title>
+<style>
+  :root {
+    --navy:  #1F4A6E;
+    --gold:  #D9A441;
+    --cream: #F5F0E8;
+    --slate: #2E3A46;
+    --gray:  #E5E9ED;
+    --mid:   #6B7B8A;
+    --white: #ffffff;
+    --red:   #c0392b;
+    --green: #27ae60;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: var(--slate);
+    min-height: 100vh;
+  }
+
+  .site-header {
+    background: var(--navy);
+    border-bottom: 4px solid var(--gold);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .site-header .wordmark { font-size: 26px; font-weight: 700; color: var(--white); letter-spacing: 2px; }
+  .site-header .tagline  { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-top: 2px; }
+
+  .hero {
+    background: linear-gradient(135deg, #1a3d5c 0%, var(--navy) 60%, #2a5a8a 100%);
+    padding: 48px 40px 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero h1 { color: var(--white); font-size: 32px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+  .hero p  { color: #a8bfcf; font-size: 16px; max-width: 600px; margin: 0 auto 28px; }
+  .kpi-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .kpi { background: rgba(255,255,255,0.08); border: 1px solid rgba(217,164,65,0.4); border-radius: 6px; padding: 12px 24px; min-width: 130px; }
+  .kpi .val { font-size: 22px; font-weight: 700; color: var(--gold); }
+  .kpi .lbl { font-size: 11px; color: #a8bfcf; margin-top: 2px; letter-spacing: 0.5px; }
+
+  .container { max-width: 880px; margin: 36px auto; padding: 0 20px 60px; }
+
+  .notice { background: var(--cream); border-left: 5px solid var(--gold); border-radius: 4px; padding: 16px 20px; margin-bottom: 32px; font-size: 14px; color: var(--slate); line-height: 1.6; }
+  .notice strong { color: var(--navy); }
+
+  .section { background: var(--white); border-radius: 8px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(31,74,110,0.08); overflow: hidden; }
+  .section-header { background: var(--navy); border-top: 3px solid var(--gold); padding: 14px 24px; display: flex; align-items: center; gap: 12px; }
+  .section-num { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 13px; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-title { color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: 0.5px; }
+  .section-body { padding: 24px; }
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field-grid.single { grid-template-columns: 1fr; }
+  .field-full { grid-column: 1 / -1; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  label { font-size: 13px; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 4px; }
+  label .req { color: var(--red); font-size: 15px; line-height: 1; }
+  .hint { font-size: 11px; color: var(--mid); margin-top: 1px; }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], textarea, select { border: 1.5px solid var(--gray); border-radius: 5px; padding: 9px 12px; font-size: 14px; font-family: inherit; color: var(--slate); background: #fafbfc; transition: border-color 0.15s, box-shadow 0.15s; width: 100%; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(217,164,65,0.15); background: var(--white); }
+  input.invalid, textarea.invalid, select.invalid { border-color: var(--red); }
+  textarea { resize: vertical; min-height: 80px; }
+  .check-list { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-radius: 5px; background: #fafbfc; border: 1.5px solid var(--gray); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .check-item:hover { border-color: var(--gold); background: #fffdf5; }
+  .check-item input[type="checkbox"] { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--navy); flex-shrink: 0; cursor: pointer; border: none; box-shadow: none; padding: 0; }
+  .check-item .check-label { font-size: 14px; color: var(--slate); line-height: 1.4; }
+  .req-badge { display: inline-block; background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+  .ins-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
+  .ins-table th { background: var(--navy); color: var(--white); padding: 10px 14px; text-align: left; font-weight: 700; font-size: 12px; letter-spacing: 0.3px; }
+  .ins-table th:first-child { border-top-left-radius: 5px; }
+  .ins-table th:last-child  { border-top-right-radius: 5px; }
+  .ins-table td { padding: 9px 14px; border-bottom: 1px solid var(--gray); vertical-align: middle; }
+  .ins-table tr:nth-child(even) td { background: var(--cream); }
+  .ins-table .min-val { font-weight: 700; color: var(--navy); }
+  .upload-list { display: flex; flex-direction: column; gap: 14px; }
+  .upload-row { background: #fafbfc; border: 1.5px solid var(--gray); border-radius: 6px; overflow: hidden; transition: border-color 0.15s; }
+  .upload-row:focus-within { border-color: var(--gold); }
+  .upload-row-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fafbfc; cursor: default; }
+  .upload-row-header input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--navy); flex-shrink: 0; cursor: pointer; border: none; box-shadow: none; padding: 0; }
+  .upload-row-label { font-size: 14px; color: var(--slate); line-height: 1.4; flex: 1; }
+  .upload-drop { display: flex; align-items: center; gap: 10px; padding: 9px 14px 12px; border-top: 1px dashed var(--gray); cursor: pointer; transition: background 0.15s; }
+  .upload-drop:hover { background: #fffdf5; }
+  .upload-drop input[type="file"] { display: none; }
+  .upload-pick-btn { display: inline-flex; align-items: center; gap: 5px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 700; font-family: inherit; padding: 5px 11px; border-radius: 4px; border: none; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background 0.15s; }
+  .upload-pick-btn:hover { background: #163a56; }
+  .upload-pick-btn.chosen { background: var(--green); }
+  .upload-format { font-size: 11px; color: var(--mid); }
+  .upload-fname { font-size: 12px; color: var(--mid); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 280px; }
+  .upload-fname.has-file { color: var(--navy); font-weight: 600; }
+  .submit-section { background: var(--white); border-radius: 8px; box-shadow: 0 2px 8px rgba(31,74,110,0.08); overflow: hidden; }
+  .cert-bar { background: var(--navy); border-top: 3px solid var(--gold); padding: 14px 24px; color: var(--white); font-size: 13px; font-style: italic; }
+  .cert-bar strong { color: var(--gold); font-style: normal; font-size: 14px; letter-spacing: 0.5px; }
+  .submit-body { padding: 24px; }
+  .submit-btn { display: block; width: 100%; background: var(--navy); color: var(--white); border: none; border-radius: 6px; padding: 16px; font-size: 17px; font-weight: 700; font-family: inherit; letter-spacing: 1px; cursor: pointer; transition: background 0.2s, transform 0.1s; margin-top: 8px; border-bottom: 3px solid var(--gold); }
+  .submit-btn:hover { background: #163a56; }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { background: #8899aa; border-bottom-color: #6b7b8a; cursor: not-allowed; }
+  #status-bar { display: none; border-radius: 6px; padding: 14px 18px; margin-top: 16px; font-size: 14px; font-weight: 600; line-height: 1.5; }
+  #status-bar.success { background: #e8f8ee; border: 1.5px solid var(--green); color: var(--green); }
+  #status-bar.error   { background: #fdf0ee; border: 1.5px solid var(--red); color: var(--red); }
+  #status-bar.loading { background: #eef3f8; border: 1.5px solid var(--navy); color: var(--navy); }
+  .upload-progress { display: none; font-size: 13px; color: var(--navy); margin-top: 14px; padding: 10px 14px; background: #eef3f8; border-radius: 5px; border: 1px solid #c5d8ea; }
+  .site-footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 20px 40px; text-align: center; color: #7a9ab8; font-size: 12px; letter-spacing: 0.3px; }
+  @media (max-width: 640px) { .site-header { padding: 16px 20px; } .hero { padding: 32px 20px 28px; } .hero h1 { font-size: 24px; } .field-grid { grid-template-columns: 1fr; } .field-full { grid-column: 1; } .container { padding: 0 12px 40px; } .section-body { padding: 16px; } .upload-fname { max-width: 140px; } }
+</style>
+</head>
+<body>
+<header class="site-header"><div><div class="wordmark">ENERGY OPTIMUM</div><div class="tagline">Capital &middot; Solar &middot; Infrastructure</div></div></header>
+<div class="hero">
+  <h1>Vendor / Subcontractor<br>Qualification Application</h1>
+  <p>Commercial &amp; Industrial PV Solar Installation Partners &mdash; Complete all sections and upload required documents below.</p>
+  <div class="kpi-row">
+    <div class="kpi"><div class="val">$2M+</div><div class="lbl">Min. GL Coverage</div></div>
+    <div class="kpi"><div class="val">500 kW+</div><div class="lbl">Project Experience</div></div>
+    <div class="kpi"><div class="val">3+</div><div class="lbl">References Required</div></div>
+    <div class="kpi"><div class="val">14 Days</div><div class="lbl">Submission Window</div></div>
+  </div>
+</div>
+<div class="container">
+  <div class="notice"><strong>How to Apply:</strong> Complete all sections, upload required documents in Section 9, then click Submit. Files are sent directly to our procurement team and a dedicated vendor folder is created automatically. Questions? Email <strong>procurement@solaroptimum.com</strong> or <strong>ricardosalinas@solaroptimum.com</strong>.</div>
+  <form id="qual-form" novalidate>
+    <div class="section"><div class="section-header"><div class="section-num">1</div><div class="section-title">COMPANY INFORMATION</div></div><div class="section-body"><div class="field-grid">
+      <div class="field"><label>Legal Business Name <span class="req">*</span></label><input type="text" id="company_legal" required placeholder="Full legal entity name"></div>
+      <div class="field"><label>DBA / Trade Name</label><input type="text" id="company_dba" placeholder="If operating under a different name"></div>
+      <div class="field"><label>Primary Contact &mdash; Name &amp; Title <span class="req">*</span></label><input type="text" id="contact_name" required placeholder="e.g. Jane Smith, VP Operations"></div>
+      <div class="field"><label>Primary Contact Email <span class="req">*</span></label><input type="email" id="contact_email" required placeholder="jane@yourcompany.com"></div>
+      <div class="field"><label>Primary Contact Phone <span class="req">*</span></label><input type="tel" id="contact_phone" required placeholder="(xxx) xxx-xxxx"></div>
+      <div class="field"><label>Years in Business <span class="req">*</span></label><input type="number" id="years_biz" required min="0" max="200" placeholder="e.g. 12"></div>
+      <div class="field field-full"><label>Corporate Structure <span class="req">*</span></label><select id="corp_structure" required><option value="">&mdash; Select &mdash;</option><option>LLC</option><option>Corporation (C-Corp)</option><option>S-Corporation</option><option>Partnership</option><option>Sole Proprietorship</option><option>Other</option></select></div>
+      <div class="field field-full"><label>Primary Business Address <span class="req">*</span></label><input type="text" id="address" required placeholder="Street, City, State, ZIP"></div>
+      <div class="field"><label>Company Website <span class="req">*</span></label><input type="text" id="website" required placeholder="https://yourcompany.com"></div>
+      <div class="field"><label>Federal Tax ID (EIN) <span class="req">*</span></label><input type="text" id="ein" required placeholder="XX-XXXXXXX"></div>
+    </div></div></div>
+    <div class="section"><div class="section-header"><div class="section-num">2</div><div class="section-title">FINANCIAL STABILITY &amp; COMPLIANCE</div></div><div class="section-body"><div class="field-grid single">
+      <div class="field"><label>D&amp;B Number / Business Credit Rating</label><input type="text" id="dnb" placeholder="DUNS number or equivalent"></div>
+      <div class="field"><label>Active Litigation Disclosure <span class="req">*</span></label><div class="hint">State "None" if not applicable.</div><textarea id="litigation" required placeholder='e.g. "None" or describe active matters'></textarea></div>
+    </div></div></div>
+    <div class="section"><div class="section-header"><div class="section-num">3</div><div class="section-title">LICENSING &amp; CERTIFICATIONS</div></div><div class="section-body"><div class="field-grid">
+      <div class="field"><label>State Contractor License Number(s) <span class="req">*</span></label><div class="hint">Include all numbers and classifications (e.g. C-10 Electrical, B General Building)</div><input type="text" id="license_num" required placeholder="e.g. CA C-10 #123456, CA B #789012"></div>
+      <div class="field"><label>States Licensed to Operate In <span class="req">*</span></label><input type="text" id="states_licensed" required placeholder="e.g. CA, NV, AZ"></div>
+      <div class="field"><label>OSHA Certifications</label><div class="hint">OSHA 10, OSHA 30 &mdash; list name and level for each certified employee</div><input type="text" id="osha_certs" placeholder="e.g. OSHA 30 - J. Smith; OSHA 10 - R. Jones"></div>
+      <div class="field"><label>Journeyman Electrician On-Site for Live-Load Work?</label><select id="journeyman"><option value="">&mdash; Select &mdash;</option><option>Yes</option><option>No</option></select></div>
+      <div class="field field-full"><label>Other Certifications</label><div class="hint">Manufacturer-specific, UL, NABCEP, etc.</div><input type="text" id="other_certs" placeholder="e.g. NABCEP PV Installation Professional - J. Smith (exp. 12/2025)"></div>
+    </div><div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="nabcep_cert"><span class="check-label">NABCEP Certified &mdash; copies uploaded in Section 9 below</span></label></div></div></div>    <div class="section"><div class="section-header"><div class="section-num">4</div><div class="section-title">INSURANCE REQUIREMENTS</div></div><div class="section-body">
+      <table class="ins-table"><thead><tr><th>Coverage Type</th><th>Minimum Required</th><th>Notes</th></tr></thead><tbody>
+        <tr><td><strong>General Liability</strong></td><td class="min-val">$2,000,000 per occurrence</td><td>Energy Optimum listed as Additional Insured</td></tr>
+        <tr><td><strong>Workers' Compensation</strong></td><td class="min-val">Statutory limits</td><td>Required for all field personnel</td></tr>
+        <tr><td><strong>Auto Liability</strong></td><td class="min-val">$1,000,000 CSL</td><td>All owned, hired &amp; non-owned vehicles</td></tr>
+        <tr><td><strong>Umbrella / Excess</strong></td><td class="min-val">$5,000,000 per occurrence</td><td>Following form over GL, WC &amp; Auto</td></tr>
+      </tbody></table>
+      <div class="field-grid">
+        <div class="field"><label>GL Coverage Limit ($) <span class="req">*</span></label><div class="hint">Min. required: $2,000,000.</div><input type="number" id="gl_limit" required min="0" placeholder="e.g. 2000000"></div>
+        <div class="field"><label>COI Expiration Date <span class="req">*</span></label><div class="hint">Must not expire within 30 days of submission.</div><input type="date" id="coi_expiry" required></div>
+      </div>
+      <div class="check-list" style="margin-top:16px"><label class="check-item"><input type="checkbox" id="wc_confirm"><span class="check-label">Workers' Compensation &mdash; active coverage confirmed for all field personnel<span class="req-badge">REQUIRED</span></span></label></div>
+    </div></div>
+    <div class="section"><div class="section-header"><div class="section-num">5</div><div class="section-title">SAFETY PROGRAM &amp; RECORD</div></div><div class="section-body">
+      <div class="field-grid">
+        <div class="field"><label>EMR (Experience Modification Rate) <span class="req">*</span></label><div class="hint">3-year average. Values above 1.2 require written explanation.</div><input type="number" id="emr_rate" required step="0.01" min="0" placeholder="e.g. 0.85"></div>
+        <div class="field"><label>Total Recordable Incident Rate (TRIR)</label><div class="hint">Most recent year.</div><input type="number" id="trir" step="0.01" min="0" placeholder="e.g. 1.2"></div>
+      </div>
+      <div class="check-list" style="margin-top:16px">
+        <label class="check-item"><input type="checkbox" id="loto_prog"><span class="check-label">LOTO (Lockout/Tagout) program in place for all field personnel<span class="req-badge">REQUIRED</span></span></label>
+        <label class="check-item"><input type="checkbox" id="arc_flash"><span class="check-label">Arc Flash program and PPE requirements documented and enforced<span class="req-badge">REQUIRED</span></span></label>
+      </div>
+    </div></div>
+    <div class="section"><div class="section-header"><div class="section-num">6</div><div class="section-title">PROJECT EXPERIENCE &amp; TECHNICAL CAPABILITY</div></div><div class="section-body">
+      <p style="font-size:13px;color:var(--mid);margin-bottom:18px">List a minimum of 3 completed solar projects with system size exceeding 500 kW DC and PTO achieved.</p>
+      <div id="projects-container"></div>
+      <button type="button" id="add-project-btn" style="margin-top:12px;background:none;border:1.5px dashed var(--gold);border-radius:5px;padding:8px 18px;color:var(--gold);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">+ Add Another Project</button>
+      <div class="field-grid" style="margin-top:20px">
+        <div class="field"><label>Project Management Tools Used</label><input type="text" id="pm_tools" placeholder="Procore, Raken, Fieldwire, etc."></div>
+        <div class="field"><label>Commissioning &amp; QA Process</label><input type="text" id="qa_process" placeholder="Briefly describe your standard process"></div>
+      </div>
+    </div></div>
+    <div class="section"><div class="section-header"><div class="section-num">7</div><div class="section-title">OPERATIONAL CAPACITY</div></div><div class="section-body"><div class="field-grid">
+      <div class="field"><label>Typical Crew Size for EPC Deployment</label><input type="text" id="crew_size" placeholder="e.g. 8-12 field crew + 2 supers"></div>
+      <div class="field"><label>Max System Size &mdash; Single Mobilization (kW DC)</label><input type="number" id="max_size" min="0" placeholder="e.g. 2000"></div>
+      <div class="field"><label>Lead Time: Award to Mobilization (days)</label><input type="number" id="lead_time" min="0" placeholder="e.g. 14"></div>
+      <div class="field"><label>Geographic Coverage Area</label><input type="text" id="geo_area" placeholder="e.g. Southern California, Nevada"></div>
+      <div class="field field-full"><label>Equipment: Owned vs. Rented</label><textarea id="equipment" placeholder="List major equipment and whether owned or rented..."></textarea></div>
     </div></div></div>
     <div class="section"><div class="section-header"><div class="section-num">8</div><div class="section-title">SERVICE &amp; WARRANTY SUPPORT</div></div><div class="section-body"><div class="field-grid">
-      <div class="field"><label>Post-Installation Service Capabilities</label><textarea id="post_service" name="post_service" placeholder="O&amp;M, monitoring, corrective maintenance..."></textarea></div>
-      <div class="field"><label>Emergency Response Time (hours to on-site)</label><input type="number" id="response_time" name="response_time" min="0" placeholder="e.g. 4"></div>
-      <div class="field"><label>Workmanship Warranty Terms</label><input type="text" id="warranty_terms" name="warranty_terms" placeholder="e.g. 2-year workmanship warranty on all installations"></div>
-      <div class="field"><label>Warranty Claim Process</label><textarea id="warranty_process" name="warranty_process" placeholder="Briefly describe your warranty claim procedure..."></textarea></div>
+      <div class="field"><label>Post-Installation Service Capabilities</label><textarea id="post_service" placeholder="O&amp;M, monitoring, corrective maintenance..."></textarea></div>
+      <div class="field"><label>Emergency Response Time (hours to on-site)</label><input type="number" id="response_time" min="0" placeholder="e.g. 4"></div>
+      <div class="field"><label>Workmanship Warranty Terms</label><input type="text" id="warranty_terms" placeholder="e.g. 2-year workmanship warranty on all installations"></div>
+      <div class="field"><label>Warranty Claim Process</label><textarea id="warranty_process" placeholder="Briefly describe your warranty claim procedure..."></textarea></div>
     </div></div></div>
     <div class="section"><div class="section-header"><div class="section-num">9</div><div class="section-title">DOCUMENT UPLOADS</div></div><div class="section-body">
-      <p style="font-size:13px;color:var(--mid);margin-bottom:20px">Upload your supporting documents here. Files attach directly to your application record on submit. Required items marked <span class="req-badge" style="vertical-align:middle">REQUIRED</span>.</p>
+      <p style="font-size:13px;color:var(--mid);margin-bottom:20px">Upload your supporting documents here. On submit, files are attached to your ClickUp application record and a dedicated vendor folder is created for your company. Required items marked <span class="req-badge" style="vertical-align:middle">REQUIRED</span>.</p>
       <div class="upload-list" id="upload-list">
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_w9" name="att_w9"><span class="upload-row-label">W-9 / Federal Tax ID <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_w9')"><input type="file" id="file_w9" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_w9','fn_w9','att_w9')"><button type="button" class="upload-pick-btn" id="btn_w9">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_w9">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_coi" name="att_coi"><span class="upload-row-label">Certificate of Insurance (COI) &mdash; Energy Optimum as Cert Holder + Additional Insured <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_coi')"><input type="file" id="file_coi" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_coi','fn_coi','att_coi')"><button type="button" class="upload-pick-btn" id="btn_coi">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_coi">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_safety" name="att_safety"><span class="upload-row-label">Company Safety Manual <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_safety')"><input type="file" id="file_safety" accept=".pdf,.doc,.docx" onchange="onFilePick(this,'btn_safety','fn_safety','att_safety')"><button type="button" class="upload-pick-btn" id="btn_safety">&#128206; Choose File</button><span class="upload-format">PDF, DOC, DOCX</span><span class="upload-fname" id="fn_safety">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_osha" name="att_osha"><span class="upload-row-label">OSHA 300/300A Logs &mdash; Past 3 Years <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_osha')"><input type="file" id="file_osha" accept=".pdf,.xls,.xlsx" onchange="onFilePick(this,'btn_osha','fn_osha','att_osha')"><button type="button" class="upload-pick-btn" id="btn_osha">&#128206; Choose File</button><span class="upload-format">PDF, XLS, XLSX</span><span class="upload-fname" id="fn_osha">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_refs" name="att_refs"><span class="upload-row-label">Project References (3 minimum, 500 kW+ with PTO) <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_refs')"><input type="file" id="file_refs" accept=".pdf,.doc,.docx" onchange="onFilePick(this,'btn_refs','fn_refs','att_refs')"><button type="button" class="upload-pick-btn" id="btn_refs">&#128206; Choose File</button><span class="upload-format">PDF, DOC, DOCX</span><span class="upload-fname" id="fn_refs">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_fin" name="att_fin"><span class="upload-row-label">Financial Statements (2 years) or Bank/CFO Letter <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_fin')"><input type="file" id="file_fin" accept=".pdf,.doc,.docx,.xls,.xlsx" onchange="onFilePick(this,'btn_fin','fn_fin','att_fin')"><button type="button" class="upload-pick-btn" id="btn_fin">&#128206; Choose File</button><span class="upload-format">PDF, DOC, XLS</span><span class="upload-fname" id="fn_fin">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_nabcep" name="att_nabcep"><span class="upload-row-label">NABCEP &amp; OSHA Certifications <span style="font-size:11px;color:var(--mid)">(if applicable)</span></span></div><div class="upload-drop" onclick="triggerPick('file_nabcep')"><input type="file" id="file_nabcep" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_nabcep','fn_nabcep','att_nabcep')"><button type="button" class="upload-pick-btn" id="btn_nabcep">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_nabcep">No file chosen</span></div></div>
-        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_photos" name="att_photos"><span class="upload-row-label">Relevant Project Photos / Videos <span style="font-size:11px;color:var(--mid)">(if available)</span></span></div><div class="upload-drop" onclick="triggerPick('file_photos')"><input type="file" id="file_photos" accept=".jpg,.jpeg,.png,.pdf,.mp4,.mov" onchange="onFilePick(this,'btn_photos','fn_photos','att_photos')"><button type="button" class="upload-pick-btn" id="btn_photos">&#128206; Choose File</button><span class="upload-format">JPG, PNG, PDF, MP4</span><span class="upload-fname" id="fn_photos">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_w9"><span class="upload-row-label">W-9 / Federal Tax ID <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_w9')"><input type="file" id="file_w9" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_w9','fn_w9','att_w9')"><button type="button" class="upload-pick-btn" id="btn_w9">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_w9">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_coi"><span class="upload-row-label">Certificate of Insurance (COI) &mdash; Energy Optimum as Cert Holder + Additional Insured <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_coi')"><input type="file" id="file_coi" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_coi','fn_coi','att_coi')"><button type="button" class="upload-pick-btn" id="btn_coi">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_coi">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_safety"><span class="upload-row-label">Company Safety Manual <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_safety')"><input type="file" id="file_safety" accept=".pdf,.doc,.docx" onchange="onFilePick(this,'btn_safety','fn_safety','att_safety')"><button type="button" class="upload-pick-btn" id="btn_safety">&#128206; Choose File</button><span class="upload-format">PDF, DOC, DOCX</span><span class="upload-fname" id="fn_safety">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_osha"><span class="upload-row-label">OSHA 300/300A Logs &mdash; Past 3 Years <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_osha')"><input type="file" id="file_osha" accept=".pdf,.xls,.xlsx" onchange="onFilePick(this,'btn_osha','fn_osha','att_osha')"><button type="button" class="upload-pick-btn" id="btn_osha">&#128206; Choose File</button><span class="upload-format">PDF, XLS, XLSX</span><span class="upload-fname" id="fn_osha">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_refs"><span class="upload-row-label">Project References (3 minimum, 500 kW+ with PTO) <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_refs')"><input type="file" id="file_refs" accept=".pdf,.doc,.docx" onchange="onFilePick(this,'btn_refs','fn_refs','att_refs')"><button type="button" class="upload-pick-btn" id="btn_refs">&#128206; Choose File</button><span class="upload-format">PDF, DOC, DOCX</span><span class="upload-fname" id="fn_refs">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_fin"><span class="upload-row-label">Financial Statements (2 years) or Bank/CFO Letter <span class="req-badge">REQUIRED</span></span></div><div class="upload-drop" onclick="triggerPick('file_fin')"><input type="file" id="file_fin" accept=".pdf,.doc,.docx,.xls,.xlsx" onchange="onFilePick(this,'btn_fin','fn_fin','att_fin')"><button type="button" class="upload-pick-btn" id="btn_fin">&#128206; Choose File</button><span class="upload-format">PDF, DOC, XLS</span><span class="upload-fname" id="fn_fin">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_nabcep"><span class="upload-row-label">NABCEP &amp; OSHA Certifications <span style="font-size:11px;color:var(--mid)">(if applicable)</span></span></div><div class="upload-drop" onclick="triggerPick('file_nabcep')"><input type="file" id="file_nabcep" accept=".pdf,.jpg,.jpeg,.png" onchange="onFilePick(this,'btn_nabcep','fn_nabcep','att_nabcep')"><button type="button" class="upload-pick-btn" id="btn_nabcep">&#128206; Choose File</button><span class="upload-format">PDF, JPG, PNG</span><span class="upload-fname" id="fn_nabcep">No file chosen</span></div></div>
+        <div class="upload-row"><div class="upload-row-header"><input type="checkbox" id="att_photos"><span class="upload-row-label">Relevant Project Photos / Videos <span style="font-size:11px;color:var(--mid)">(if available)</span></span></div><div class="upload-drop" onclick="triggerPick('file_photos')"><input type="file" id="file_photos" accept=".jpg,.jpeg,.png,.pdf,.mp4,.mov" onchange="onFilePick(this,'btn_photos','fn_photos','att_photos')"><button type="button" class="upload-pick-btn" id="btn_photos">&#128206; Choose File</button><span class="upload-format">JPG, PNG, PDF, MP4</span><span class="upload-fname" id="fn_photos">No file chosen</span></div></div>
       </div>
-    </div></div>    <div class="submit-section"><div class="cert-bar"><strong>CERTIFICATION &amp; SUBMISSION</strong><br>By submitting this form, I certify that all information provided is accurate and complete to the best of my knowledge. Submission is for prequalification purposes only and does not guarantee award of work.</div><div class="submit-body"><div class="field-grid" style="margin-bottom:20px"><div class="field"><label>Authorized Signatory Name <span class="req">*</span></label><input type="text" id="signatory" name="signatory" required placeholder="Full name of authorized signatory"></div><div class="field"><label>Submission Date <span class="req">*</span></label><input type="date" id="sub_date" name="sub_date" required></div></div><button type="submit" class="submit-btn" id="submit-btn">&#9654; &nbsp; SUBMIT APPLICATION</button><div class="upload-progress" id="upload-progress"></div><div id="status-bar"></div></div></div>
+    </div></div>
+    <div class="submit-section"><div class="cert-bar"><strong>CERTIFICATION &amp; SUBMISSION</strong><br>By submitting this form, I certify that all information provided is accurate and complete to the best of my knowledge. Submission is for prequalification purposes only and does not guarantee award of work.</div><div class="submit-body"><div class="field-grid" style="margin-bottom:20px"><div class="field"><label>Authorized Signatory Name <span class="req">*</span></label><input type="text" id="signatory" required placeholder="Full name of authorized signatory"></div><div class="field"><label>Submission Date <span class="req">*</span></label><input type="date" id="sub_date" required></div></div><button type="submit" class="submit-btn" id="submit-btn">&#9654; &nbsp; SUBMIT APPLICATION</button><div class="upload-progress" id="upload-progress"></div><div id="status-bar"></div></div></div>
   </form>
 </div>
 <footer class="site-footer">ENERGY OPTIMUM &nbsp;&middot;&nbsp; CONFIDENTIAL &nbsp;&middot;&nbsp; 1833 Victory Blvd, Glendale CA 91201 &nbsp;&middot;&nbsp; SolarOptimum.Com</footer>
 <script>
 const CLICKUP_TOKEN = 'pk_284686144_BEUPGXZNG0FV1FUR71TYMHU2YE39I05F';
-const LIST_ID = '901816708328';
+const SPACE_ID = '901810230011';
+const LIST_ID  = '901816708328';
 const CF = { companyName:'d25303b1-6f77-4d70-a02d-d65a518fe19a', primaryContact:'1c3bac1e-f4b5-4696-96d4-5be34b19769f', email:'86e50914-99e4-4b1c-ad76-acf47b1ad4cf', phone:'1754a7a3-4e9f-4422-808e-a85fd26cc72d', yearsInBiz:'76fe717f-9ae3-4eb3-88bf-51f55ef1c55e', licenseNum:'f8027e9f-a38c-41f9-817d-aa637c16a759', statesLicensed:'4e178642-c1a5-45a6-a8e7-25d8405cf94c', nabcep:'ed565802-7297-4191-9f75-d3020553365d', emrRate:'8cabd0d1-873a-4b8e-ba97-0e84503e8221', glInsurance:'c55780da-3def-4f9a-8343-e6fa40b38da6', wcInsurance:'9d93cb49-a74b-43a9-adc6-8bc7142c00de', w9:'2a220ff2-f7be-42e9-bec3-a903adfe0d94', coi:'6bd39243-9bf5-4623-8fc3-b80fcf3e842d', safetyManual:'49cf587b-f3c4-46ff-9e85-f0330d315c7f', oshaLogs:'7451d92d-a56b-4665-8a0e-5e716ed90f55', references:'4f194226-e3b2-4f9f-9443-e5114810537a', submissionDate:'7e161c67-60f3-482b-a1a0-00143903c62f' };
 function triggerPick(id){document.getElementById(id).click();}
 function onFilePick(input,btnId,fnId,chkId){if(!input.files.length)return;var f=input.files[0];document.getElementById(fnId).textContent=f.name;document.getElementById(fnId).classList.add('has-file');var b=document.getElementById(btnId);b.textContent='✅ '+f.name.slice(0,22)+(f.name.length>22?'..':'');b.classList.add('chosen');document.getElementById(chkId).checked=true;}
 var projectCount=0;
-function addProject(num){var cont=document.getElementById('projects-container');var div=document.createElement('div');div.className='section';div.style.cssText='box-shadow:none;border:1.5px solid #E5E9ED;margin-bottom:16px';div.id='proj-block-'+num;var req=num<=3?'<span class="req">*</span>':'<span style="font-size:11px;color:var(--mid)">(optional)</span>';div.innerHTML='<div style="background:#f7f9fb;border-top:2px solid var(--gold);padding:10px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700;font-size:13px;color:var(--navy)">Project '+num+' '+req+'</span>'+(num>1?'<button type="button" onclick="removeProject('+num+')" style="background:none;border:none;color:#c0392b;font-size:12px;cursor:pointer;font-family:inherit">✕ Remove</button>':'')+'</div><div style="padding:16px"><div class="field-grid"><div class="field field-full"><label>Project Name &amp; Location '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="text" id="proj_name_'+num+'" name="proj_name_'+num+'" '+(num<=3?'required':'')+' placeholder="Project name, city, state"></div><div class="field"><label>System Size (kW DC) '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="number" id="proj_size_'+num+'" name="proj_size_'+num+'" '+(num<=3?'required':'')+' min="500" placeholder="e.g. 1500"></div><div class="field"><label>Contract Value</label><input type="text" id="proj_value_'+num+'" name="proj_value_'+num+'" placeholder="e.g. $2.4M"></div><div class="field"><label>PTO Date Achieved '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="date" id="proj_pto_'+num+'" name="proj_pto_'+num+'" '+(num<=3?'required':'')+' ></div><div class="field"><label>Client Name &amp; Reference Contact '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="text" id="proj_ref_'+num+'" name="proj_ref_'+num+'" '+(num<=3?'required':'')+' placeholder="Client name, contact, phone/email"></div><div class="field field-full"><label>Scope of Work</label><textarea id="proj_scope_'+num+'" name="proj_scope_'+num+'" placeholder="Rooftop PV, ground mount, BESS, EV, structural, electrical..."></textarea></div></div></div>';cont.appendChild(div);projectCount=num;}
+function addProject(num){var cont=document.getElementById('projects-container');var div=document.createElement('div');div.className='section';div.style.cssText='box-shadow:none;border:1.5px solid #E5E9ED;margin-bottom:16px';div.id='proj-block-'+num;var req=num<=3?'<span class="req">*</span>':'<span style="font-size:11px;color:var(--mid)">(optional)</span>';div.innerHTML='<div style="background:#f7f9fb;border-top:2px solid var(--gold);padding:10px 16px;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700;font-size:13px;color:var(--navy)">Project '+num+' '+req+'</span>'+(num>1?'<button type="button" onclick="removeProject('+num+')" style="background:none;border:none;color:#c0392b;font-size:12px;cursor:pointer;font-family:inherit">✕ Remove</button>':'')+'</div><div style="padding:16px"><div class="field-grid"><div class="field field-full"><label>Project Name &amp; Location '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="text" id="proj_name_'+num+'" '+(num<=3?'required':'')+' placeholder="Project name, city, state"></div><div class="field"><label>System Size (kW DC) '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="number" id="proj_size_'+num+'" '+(num<=3?'required':'')+' min="500" placeholder="e.g. 1500"></div><div class="field"><label>Contract Value</label><input type="text" id="proj_value_'+num+'" placeholder="e.g. $2.4M"></div><div class="field"><label>PTO Date Achieved '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="date" id="proj_pto_'+num+'" '+(num<=3?'required':'')+' ></div><div class="field"><label>Client Name &amp; Reference Contact '+(num<=3?'<span class="req">*</span>':'')+' </label><input type="text" id="proj_ref_'+num+'" '+(num<=3?'required':'')+' placeholder="Client name, contact, phone/email"></div><div class="field field-full"><label>Scope of Work</label><textarea id="proj_scope_'+num+'" placeholder="Rooftop PV, ground mount, BESS, EV, structural, electrical..."></textarea></div></div></div>';cont.appendChild(div);projectCount=num;}
 function removeProject(num){var el=document.getElementById('proj-block-'+num);if(el)el.remove();}
 addProject(1);addProject(2);addProject(3);
 document.getElementById('add-project-btn').addEventListener('click',function(){addProject(projectCount+1);});
 document.getElementById('sub_date').value=new Date().toISOString().split('T')[0];
 function collectProjects(){var p=[];for(var i=1;i<=projectCount+5;i++){var n=document.getElementById('proj_name_'+i);if(!n||!n.value.trim())continue;p.push({name:n.value.trim(),size:(document.getElementById('proj_size_'+i)||{}).value||'',value:(document.getElementById('proj_value_'+i)||{}).value||'',pto:(document.getElementById('proj_pto_'+i)||{}).value||'',ref:(document.getElementById('proj_ref_'+i)||{}).value||'',scope:(document.getElementById('proj_scope_'+i)||{}).value||''});}return p;}
-async function uploadFileToTask(taskId,fileInput,label){if(!fileInput||!fileInput.files.length)return{skipped:true};var f=fileInput.files[0];var fd=new FormData();fd.append('attachment',f,f.name);var r=await fetch('https://api.clickup.com/api/v2/task/'+taskId+'/attachment',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN},body:fd});var d=await r.json();return{ok:r.ok,label:label,filename:f.name};}
+async function uploadFileToTask(taskId,fileInput,label){if(!fileInput||!fileInput.files.length)return{skipped:true};var f=fileInput.files[0];var fd=new FormData();fd.append('attachment',f,f.name);var r=await fetch('https://api.clickup.com/api/v2/task/'+taskId+'/attachment',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN},body:fd});var d=await r.json();return{ok:r.ok,label:label};}
 document.getElementById('qual-form').addEventListener('submit',async function(e){e.preventDefault();var btn=document.getElementById('submit-btn');var sb=document.getElementById('status-bar');var up=document.getElementById('upload-progress');var req=document.querySelectorAll('[required]');var valid=true;req.forEach(function(el){if(!el.value.trim()){el.classList.add('invalid');valid=false;}else{el.classList.remove('invalid');}});if(!valid){sb.className='error';sb.style.display='block';sb.textContent='Please complete all required fields (marked *) before submitting.';document.querySelector('.invalid').scrollIntoView({behavior:'smooth',block:'center'});return;}
 var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};var chk=function(id){var el=document.getElementById(id);return el?el.checked:false;};
 var companyName=g('company_legal'),contactName=g('contact_name'),email=g('contact_email'),phone=g('contact_phone'),yearsInBiz=parseFloat(g('years_biz'))||0,licenseNum=g('license_num'),statesLic=g('states_licensed'),nabcep=chk('nabcep_cert'),glLimit=parseFloat(g('gl_limit'))||0,wcConfirm=chk('wc_confirm'),emrRate=parseFloat(g('emr_rate'))||0,w9Confirm=chk('att_w9'),coiConfirm=chk('att_coi'),safetyManual=chk('att_safety'),oshaLogs=chk('att_osha'),refsConfirm=chk('att_refs'),subDate=g('sub_date');
 var projects=collectProjects();var projText=projects.map(function(p,i){return '**Project '+(i+1)+': '+p.name+'**\n- Size: '+p.size+' kW DC\n- Contract Value: '+p.value+'\n- PTO Date: '+p.pto+'\n- Reference: '+p.ref+'\n- Scope: '+p.scope;}).join('\n\n');
-var description='## Subcontractor Qualification Application\n\n**Company:** '+companyName+(g('company_dba')?' (DBA: '+g('company_dba')+')':'')+' \n**Structure:** '+g('corp_structure')+'  |  **Years in Business:** '+yearsInBiz+'\n**Address:** '+g('address')+'  |  **Website:** '+g('website')+'\n**EIN:** '+g('ein')+'  |  **D&B:** '+g('dnb')+'\n\n---\n\n### Insurance\n- GL Coverage Limit: $'+glLimit.toLocaleString()+'\n- COI Expiry: '+g('coi_expiry')+'\n- WC Confirmed: '+(wcConfirm?'YES':'NO')+'\n\n### Safety\n- EMR Rate: '+emrRate+'\n- TRIR: '+(g('trir')||'Not provided')+'\n- LOTO: '+(chk('loto_prog')?'YES':'NO')+'\n- Arc Flash: '+(chk('arc_flash')?'YES':'NO')+'\n\n### Licensing\n- License #: '+licenseNum+'\n- States: '+statesLic+'\n- OSHA Certs: '+(g('osha_certs')||'None listed')+'\n- Journeyman Electrician: '+(g('journeyman')||'Not specified')+'\n- NABCEP: '+(nabcep?'YES':'NO')+'\n- Other Certs: '+(g('other_certs')||'None')+'\n\n### Operations\n- Crew Size: '+(g('crew_size')||'Not provided')+'\n- Max System Size: '+(g('max_size')||'Not provided')+' kW DC\n- Lead Time: '+(g('lead_time')||'Not provided')+' days\n- Geography: '+(g('geo_area')||'Not provided')+'\n- Equipment: '+(g('equipment')||'Not provided')+'\n- PM Tools: '+(g('pm_tools')||'Not provided')+'\n- QA Process: '+(g('qa_process')||'Not provided')+'\n\n### Warranty\n- Post-Install Service: '+(g('post_service')||'Not provided')+'\n- Emergency Response: '+(g('response_time')||'Not provided')+' hrs\n- Warranty Terms: '+(g('warranty_terms')||'Not provided')+'\n\n### Litigation\n'+g('litigation')+'\n\n---\n\n### Project Experience\n'+(projText||'No projects listed.')+'\n\n---\n\n### Documents Uploaded\n- W-9: '+(w9Confirm?'YES':'NO')+'\n- COI: '+(coiConfirm?'YES':'NO')+'\n- Safety Manual: '+(safetyManual?'YES':'NO')+'\n- OSHA Logs: '+(oshaLogs?'YES':'NO')+'\n- References: '+(refsConfirm?'YES':'NO')+'\n- Financial Statements: '+(chk('att_fin')?'YES':'NO')+'\n- NABCEP Certs: '+(chk('att_nabcep')?'YES':'NO')+'\n- Project Photos: '+(chk('att_photos')?'YES':'NO')+'\n\n**Submitted by:** '+g('signatory')+'  |  **Date:** '+subDate;
+var description='## Subcontractor Qualification Application\n\n**Company:** '+companyName+(g('company_dba')?' (DBA: '+g('company_dba')+')':'')+' \n**Structure:** '+g('corp_structure')+'  |  **Years in Business:** '+yearsInBiz+'\n**Address:** '+g('address')+'  |  **Website:** '+g('website')+'\n**EIN:** '+g('ein')+'  |  **D&B:** '+g('dnb')+'\n\n---\n\n### Insurance\n- GL Coverage Limit: $'+glLimit.toLocaleString()+'\n- COI Expiry: '+g('coi_expiry')+'\n- WC Confirmed: '+(wcConfirm?'YES':'NO')+'\n\n### Safety\n- EMR Rate: '+emrRate+'\n- TRIR: '+(g('trir')||'Not provided')+'\n- LOTO: '+(chk('loto_prog')?'YES':'NO')+'\n- Arc Flash: '+(chk('arc_flash')?'YES':'NO')+'\n\n### Licensing\n- License #: '+licenseNum+'\n- States: '+statesLic+'\n- OSHA Certs: '+(g('osha_certs')||'None listed')+'\n- Journeyman Electrician: '+(g('journeyman')||'Not specified')+'\n- NABCEP: '+(nabcep?'YES':'NO')+'\n- Other Certs: '+(g('other_certs')||'None')+'\n\n### Operations\n- Crew Size: '+(g('crew_size')||'Not provided')+'\n- Max System Size: '+(g('max_size')||'Not provided')+' kW DC\n- Lead Time: '+(g('lead_time')||'Not provided')+' days\n- Geography: '+(g('geo_area')||'Not provided')+'\n- Equipment: '+(g('equipment')||'Not provided')+'\n\n### Warranty\n- Post-Install Service: '+(g('post_service')||'Not provided')+'\n- Emergency Response: '+(g('response_time')||'Not provided')+' hrs\n- Warranty Terms: '+(g('warranty_terms')||'Not provided')+'\n\n### Litigation\n'+g('litigation')+'\n\n---\n\n### Project Experience\n'+(projText||'No projects listed.')+'\n\n---\n\n### Documents Uploaded\n- W-9: '+(w9Confirm?'YES':'NO')+'\n- COI: '+(coiConfirm?'YES':'NO')+'\n- Safety Manual: '+(safetyManual?'YES':'NO')+'\n- OSHA Logs: '+(oshaLogs?'YES':'NO')+'\n- References: '+(refsConfirm?'YES':'NO')+'\n- Financial Statements: '+(chk('att_fin')?'YES':'NO')+'\n- NABCEP Certs: '+(chk('att_nabcep')?'YES':'NO')+'\n- Project Photos: '+(chk('att_photos')?'YES':'NO')+'\n\n**Submitted by:** '+g('signatory')+'  |  **Date:** '+subDate;
 var subDateMs=subDate?new Date(subDate).getTime():null;
-var payload={name:companyName+' — Qualification Application',markdown_description:description,status:'Submitted',custom_fields:[{id:CF.companyName,value:companyName},{id:CF.primaryContact,value:contactName},{id:CF.email,value:email},{id:CF.phone,value:phone},{id:CF.yearsInBiz,value:yearsInBiz},{id:CF.licenseNum,value:licenseNum},{id:CF.statesLicensed,value:statesLic},{id:CF.nabcep,value:nabcep},{id:CF.emrRate,value:emrRate},{id:CF.glInsurance,value:glLimit},{id:CF.wcInsurance,value:wcConfirm},{id:CF.w9,value:w9Confirm},{id:CF.coi,value:coiConfirm},{id:CF.safetyManual,value:safetyManual},{id:CF.oshaLogs,value:oshaLogs},{id:CF.references,value:refsConfirm}].concat(subDateMs?[{id:CF.submissionDate,value:subDateMs}]:[])}
-;btn.disabled=true;btn.textContent='Submitting...';sb.className='loading';sb.style.display='block';sb.textContent='Creating your application record...';
-try{var res=await fetch('https://api.clickup.com/api/v2/list/'+LIST_ID+'/task',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN,'Content-Type':'application/json'},body:JSON.stringify(payload)});var data=await res.json();if(!res.ok||!data.id)throw new Error(data.err||'Task creation failed (HTTP '+res.status+')');
-var taskId=data.id;var fileInputs=[{id:'file_w9',label:'W-9'},{id:'file_coi',label:'COI'},{id:'file_safety',label:'Safety Manual'},{id:'file_osha',label:'OSHA Logs'},{id:'file_refs',label:'Project References'},{id:'file_fin',label:'Financial Statements'},{id:'file_nabcep',label:'NABCEP Certs'},{id:'file_photos',label:'Project Photos'}];var uploaded=0;
-for(var fi=0;fi<fileInputs.length;fi++){var inp=document.getElementById(fileInputs[fi].id);if(!inp||!inp.files.length)continue;up.style.display='block';up.textContent='Uploading '+fileInputs[fi].label+' ('+(fi+1)+' of '+fileInputs.length+')...';var upRes=await uploadFileToTask(taskId,inp,fileInputs[fi].label);if(upRes.ok)uploaded++;}
-up.style.display='none';sb.className='success';sb.innerHTML='<strong>Application submitted successfully!</strong><br>Thank you, <strong>'+companyName+'</strong>. Our procurement team will review your application and reach out within 5 business days.'+(uploaded>0?'<br><span style="font-size:12px;opacity:0.85">'+uploaded+' document'+(uploaded>1?'s':'')+' uploaded to your application record.</span>':'');btn.textContent='Application Submitted';btn.style.background='var(--green)';btn.style.borderBottomColor='#1e8449';document.getElementById('qual-form').style.pointerEvents='none';window.scrollTo({top:0,behavior:'smooth'});
-}catch(err){sb.className='error';sb.textContent='Submission error: '+err.message+' - Please try again or email procurement@solaroptimum.com';btn.disabled=false;btn.textContent='▶   SUBMIT APPLICATION';up.style.display='none';}
+var queuePayload={name:companyName+' — Qualification Application',markdown_description:description,status:'Submitted',custom_fields:[{id:CF.companyName,value:companyName},{id:CF.primaryContact,value:contactName},{id:CF.email,value:email},{id:CF.phone,value:phone},{id:CF.yearsInBiz,value:yearsInBiz},{id:CF.licenseNum,value:licenseNum},{id:CF.statesLicensed,value:statesLic},{id:CF.nabcep,value:nabcep},{id:CF.emrRate,value:emrRate},{id:CF.glInsurance,value:glLimit},{id:CF.wcInsurance,value:wcConfirm},{id:CF.w9,value:w9Confirm},{id:CF.coi,value:coiConfirm},{id:CF.safetyManual,value:safetyManual},{id:CF.oshaLogs,value:oshaLogs},{id:CF.references,value:refsConfirm}].concat(subDateMs?[{id:CF.submissionDate,value:subDateMs}]:[])};
+btn.disabled=true;btn.textContent='Submitting...';sb.className='loading';sb.style.display='block';sb.textContent='Step 1 of 4 — Creating application record...';
+try{
+var qRes=await fetch('https://api.clickup.com/api/v2/list/'+LIST_ID+'/task',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN,'Content-Type':'application/json'},body:JSON.stringify(queuePayload)});var qData=await qRes.json();if(!qRes.ok||!qData.id)throw new Error(qData.err||'Queue task failed (HTTP '+qRes.status+')');var queueTaskId=qData.id;
+sb.textContent='Step 2 of 4 — Creating your vendor folder...';
+var folderName='🏢 '+companyName;
+var fRes=await fetch('https://api.clickup.com/api/v2/space/'+SPACE_ID+'/folder',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN,'Content-Type':'application/json'},body:JSON.stringify({name:folderName})});var fData=await fRes.json();if(!fRes.ok||!fData.id)throw new Error(fData.err||'Folder creation failed (HTTP '+fRes.status+')');var folderId=fData.id;
+sb.textContent='Step 3 of 4 — Setting up vendor workspace...';
+var today=new Date().toISOString().slice(0,10);
+var lRes=await fetch('https://api.clickup.com/api/v2/folder/'+folderId+'/list',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN,'Content-Type':'application/json'},body:JSON.stringify({name:'Application & Documents',content:'Submitted '+today+' | Contact: '+contactName+' | '+email})});var lData=await lRes.json();if(!lRes.ok||!lData.id)throw new Error(lData.err||'List creation failed');var vendorListId=lData.id;
+var vRes=await fetch('https://api.clickup.com/api/v2/list/'+vendorListId+'/task',{method:'POST',headers:{'Authorization':CLICKUP_TOKEN,'Content-Type':'application/json'},body:JSON.stringify({name:companyName+' — Qualification Application',markdown_description:description,status:'Open'})});var vData=await vRes.json();var vendorTaskId=vData.id||null;
+sb.textContent='Step 4 of 4 — Uploading documents...';
+var fileInputs=[{id:'file_w9',label:'W-9'},{id:'file_coi',label:'COI'},{id:'file_safety',label:'Safety Manual'},{id:'file_osha',label:'OSHA Logs'},{id:'file_refs',label:'Project References'},{id:'file_fin',label:'Financial Statements'},{id:'file_nabcep',label:'NABCEP Certs'},{id:'file_photos',label:'Project Photos'}];var uploaded=0;
+for(var fi=0;fi<fileInputs.length;fi++){var inp=document.getElementById(fileInputs[fi].id);if(!inp||!inp.files.length)continue;up.style.display='block';up.textContent='Uploading '+fileInputs[fi].label+'...';await uploadFileToTask(queueTaskId,inp,fileInputs[fi].label);if(vendorTaskId)await uploadFileToTask(vendorTaskId,inp,fileInputs[fi].label);uploaded++;}
+up.style.display='none';
+sb.className='success';sb.innerHTML='<strong>Application submitted successfully!</strong><br>Thank you, <strong>'+companyName+'</strong>. A dedicated vendor folder has been created in our system and our procurement team will review your application within 5 business days.'+(uploaded>0?'<br><span style="font-size:12px;opacity:0.85">'+uploaded+' document'+(uploaded>1?'s':'')+' uploaded to your vendor record.</span>':'');btn.textContent='Application Submitted';btn.style.background='var(--green)';btn.style.borderBottomColor='#1e8449';document.getElementById('qual-form').style.pointerEvents='none';window.scrollTo({top:0,behavior:'smooth'});
+}catch(err){sb.className='error';sb.textContent='Submission error: '+err.message+' — Please try again or email procurement@solaroptimum.com';btn.disabled=false;btn.textContent='▶   SUBMIT APPLICATION';up.style.display='none';}
 });
 </script>
 </body>
